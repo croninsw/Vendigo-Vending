@@ -5,15 +5,16 @@ namespace Vendigo
 {
     public class CandyVendingMachine : IVendingMachine<Candy>
     {
-        public List<Candy> products { get; set; } = new List<Candy> ();
+        public List<Candy> currentStock { get; set; } = new List<Candy> ();
+        public List<Candy> soldItems { get; set; } = new List<Candy> ();
 
         public void AddProduct (Candy candy)
         {
-            products.Add(candy);
+            currentStock.Add(candy);
         }
         public void SellProduct (Candy candy)
         {
-            products.Add(candy);
+            currentStock.Remove(candy);
         }
     }
 }

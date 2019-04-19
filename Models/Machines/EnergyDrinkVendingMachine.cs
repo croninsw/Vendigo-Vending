@@ -5,15 +5,16 @@ namespace Vendigo
 {
     public class EnergyDrinkVendingMachine : IVendingMachine<EnergyDrink>
     {
-        public List<EnergyDrink> products { get; set; } = new List<EnergyDrink> ();
+        public List<EnergyDrink> currentStock { get; set; } = new List<EnergyDrink> ();
+        public List<EnergyDrink> soldItems { get; set; } = new List<EnergyDrink> ();
 
         public void AddProduct (EnergyDrink energyDrink)
         {
-            products.Add(energyDrink);
+            currentStock.Add(energyDrink);
         }
         public void SellProduct (EnergyDrink energyDrink)
         {
-            products.Add(energyDrink);
+            currentStock.Remove(energyDrink);
         }
     }
 }

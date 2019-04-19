@@ -5,15 +5,17 @@ namespace Vendigo
 {
     public class SodaVendingMachine : IVendingMachine<Soda>
     {
-        public List<Soda> products { get; set; } = new List<Soda> ();
+        public List<Soda> currentStock { get; set; } = new List<Soda> ();
+
+        public List<Soda> soldItems { get; set; } = new List<Soda> ();
 
         public void AddProduct (Soda soda)
         {
-            products.Add(soda);
+            currentStock.Add(soda);
         }
         public void SellProduct (Soda soda)
         {
-            products.Add(soda);
+            currentStock.Remove(soda);
         }
     }
 }

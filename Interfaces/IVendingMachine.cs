@@ -5,10 +5,12 @@ namespace Vendigo
 {
     public interface IVendingMachine<T>
     {
-        List<T> products { get; set; }
+        List<T> currentStock { get; set; }
 
-        void AddProduct (T product);
+        List<T> soldItems { get; set; }
 
-        void SellProduct (T product);
+        void AddProduct (T currentStock);
+
+        void SellProduct (T currentStock);
     }
 }

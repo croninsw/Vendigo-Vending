@@ -5,15 +5,16 @@ namespace Vendigo
 {
     public class PreparedFoodVendingMachine : IVendingMachine<PreparedFood>
     {
-        public List<PreparedFood> products { get; set; } = new List<PreparedFood> ();
+        public List<PreparedFood> currentStock { get; set; } = new List<PreparedFood> ();
+        public List<PreparedFood> soldItems { get; set; } = new List<PreparedFood> ();
 
         public void AddProduct (PreparedFood preparedFood)
         {
-            products.Add(preparedFood);
+            currentStock.Add(preparedFood);
         }
         public void SellProduct (PreparedFood preparedFood)
         {
-            products.Add(preparedFood);
+            currentStock.Remove(preparedFood);
         }
     }
 }

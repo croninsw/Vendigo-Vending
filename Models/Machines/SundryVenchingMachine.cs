@@ -5,15 +5,17 @@ namespace Vendigo
 {
     public class SundryVendingMachine : IVendingMachine<Sundry>
     {
-        public List<Sundry> products { get; set; } = new List<Sundry> ();
+        public List<Sundry> currentStock { get; set; } = new List<Sundry>();
+        public List<Sundry> soldItems { get; set; } = new List<Sundry>();
 
-        public void AddProduct (Sundry sundry)
+
+        public void AddProduct(Sundry sundry)
         {
-            products.Add(sundry);
+            currentStock.Add(sundry);
         }
-        public void SellProduct (Sundry sundry)
+        public void SellProduct(Sundry sundry)
         {
-            products.Add(sundry);
+            currentStock.Remove(sundry);
         }
     }
 }
